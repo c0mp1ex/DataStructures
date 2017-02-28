@@ -26,12 +26,13 @@ void insert_sort(int *num, int len)
 {
     int in, out, temp;
     for (in = 1; in < len; in++) {
-        temp = num[in];//摸下一张牌
-        //从当前的位置 out=in  一直比较到0
+        temp = num[in];
         for (out = in; out > 0 && temp < num[out-1]; out--) {
-            num[out] = num[out-1];//移出空位
+                if(temp < num[out-1]) {
+                    num[out] = num[out-1];
+                }
         }
-        num[out] = temp;//当手里的牌大于等于某个地方的牌时，将牌插入到此处
+        num[out] = temp;
     }
 
 }
