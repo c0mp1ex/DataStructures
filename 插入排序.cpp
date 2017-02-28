@@ -7,7 +7,7 @@
 
 
 ***/
-#include<stdio.h>
+#include<cstdio>
 
 void insert_sort(int *num, int len);
 
