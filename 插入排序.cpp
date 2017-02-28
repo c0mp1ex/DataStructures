@@ -27,7 +27,7 @@ void insert_sort(int *num, int len)
     int in, out, temp;
     for (in = 1; in < len; in++) {
         temp = num[in];
-        for (out = in; out > 0; out--) {
+        for (out = in; out > 0 && temp < num[out-1]; out--) {
                 if(temp < num[out-1]) {
                     num[out] = num[out-1];
                 }
