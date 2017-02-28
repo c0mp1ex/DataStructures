@@ -4,11 +4,11 @@ void BubbleSort(int *num, int len) {
 		
 		int i, j, temp;
 		bool flag = 1;
-		for (i = len - 1; i > 0; i--) {
+		for (i = len - 1; i > 0; i--) { //一共可以走多少轮
 		
-			for (j = 0; j < i; j++) {
+			for (j = 0; j < i; j++) {//第一轮排序
 				temp = num[j];
-				if (num[j] > num[j+1]) {
+				if (num[j] > num[j+1]) {//如果前一个数比后一数大，则交换位置
 					
 					num[j] = num[j+1];
 					num[j+1] = temp;
@@ -16,7 +16,7 @@ void BubbleSort(int *num, int len) {
 
 				}
 			}
-			if (flag == 1) {
+			if (flag == 1) {//若数已经按循序排列（就是不在进行交换了），则不用在进入循环进行比较了 
 				break;
 			}
 		}
