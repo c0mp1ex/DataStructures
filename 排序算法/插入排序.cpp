@@ -26,13 +26,16 @@ void insert_sort(int *num, int len)
 {
     int in, out, temp;
     for (in = 1; in < len; in++) {
-        temp = num[in];
+        //将数据插入有序表，刚开始假设第一个元素已经为有序
+        temp = num[in]; //让temp作为要插入的无序表的第一个数
         for (out = in; out > 0 && temp < num[out-1]; out--) {
+            //让temp依次与有序表从后向前进行元素的比较
                 if(temp < num[out-1]) {
-                    num[out] = num[out-1];
+                    
+                    num[out] = num[out-1]; //如果temp小于有序表的元素，则将大的数向后移，空出位置
                 }
         }
-        num[out] = temp;
+        num[out] = temp;// 当无序表的第一个数比较完以后，将temp插入应该插入的位置
     }
 
 }
